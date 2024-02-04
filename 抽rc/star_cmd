@@ -1,0 +1,13 @@
+BLOCK: ASYNC_set_DFFHx1_fin32
+CELL_TYPE: LAYOUT
+SKIP_CELLS: !*
+MAPPING_FILE: layermap.map
+TCAD_GRD_FILE: TSV.nxtgrd
+CALIBRE_QUERY_FILE: query_cmd
+CALIBRE_LVS_DEVICE_TYPE_MOS nmos_rvt pmos_rvt nmos_lvt pmos_lvt nmos_slvt nmos_slvt nmos_sram pmos_sram
+LVS_EXTRACTION_REPORT_FILE:lvs_extract_report
+CASE_SENSITIVE: NO
+MULTIGATE_MODELS: YES
+IGNORE_CAPACITANCE: DIFF
+NETLIST_FORMAT: STAR
+NETLIST_FILE: ASYNC_set_DFFHx1_fin32.spf

@@ -1,0 +1,25 @@
+準備前 :
+
+請在當前資料夾放入以下資料
+1. LVS rule file (自行準備)
+2. RUNSET
+3. GDS file (自行準備)
+4. CDL file (自行準備)
+5. cellList (自行準備但資料夾有範例)
+
+若您要抽rc請額外加入以下資料
+1.cciFlow.sh
+2.layermap.map
+3.query_cmd
+4.star_cmd
+5.TSV.nxtgrd
+
+編譯 :
+g++ -o autoLVS autoLVS.cpp
+
+執行 :
+./autoLVS LVS_FILE_NAME RUNSET GDS_FILE_NAME CDL_FILE_NAME
+
+輸出 :
+LVS錯誤將會顯示於屏幕
+RC資料將會在RC folder

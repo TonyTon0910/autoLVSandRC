@@ -1,0 +1,26 @@
+conducting_layers
+ M1 M1
+ M2 M2
+ LISD LISD
+ LIG LIG
+ SDT SDT
+ Gate_1 Gate 
+ N_GATE Gate
+ P_GATE Gate
+ N_src_drn N_src_drn
+ P_src_drn P_src_drn
+ n_cont_1 n_cont_1
+ p_cont_1 p_cont_1
+ BPR BPR
+ BM1 BM1
+ nsub SUBSTRATE
+ psub SUBSTRATE
+ TSV TSV
+via_layers
+ mp_cont mp_cont
+ mn_cont mn_cont
+ V0LIG V0LIG
+ V0LISD V0LISD
+ V1 V1
+ VBPR VBPR
+

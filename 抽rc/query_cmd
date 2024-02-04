@@ -1,0 +1,58 @@
+LAYOUT NETLIST DEVICE LOCATION CENTER
+# Instructs query server to write net ID to seed polygons
+GDS SEED PROPERTY ORIGINAL
+# Instructs query server to output further information about the 
+# device recognition layer to the CCI database.
+GDS SEED PROPERTY DEVICE ORIGINAL 
+#Generates the GDS_MAP layer file.
+RESPONSE FILE GDS_MAP
+GDS MAP
+RESPONSE DIRECT
+# The following lines define the property numbers for net names and 
+# instance names. StarRC expects the NETPROP number to be 5, the 
+# PLACEPROP number to #be 6, and INSTPROP number to be 7. Do not change.
+GDS NETPROP NUMBER 5
+GDS PLACEPROP NUMBER 6
+GDS DEVPROP NUMBER 7
+#Outputs Calibre AGF file for StarRC. 
+GDS WRITE agf_file
+# The three lines below are added by RB  
+
+LVS SETTINGS REPORT WRITE lvs_extract_report
+#XREF XNAME SOURCE OFF
+# These commands ensure pin coordinates and proper hierarchy 
+# in the ideal layout netlist written out by Calibre.
+# AGF is the only allowed keyword for LAYOUT NETLIST HIERARCHY.
+LAYOUT NETLIST DEVICE LOCATION CENTER
+LAYOUT NETLIST TRIVIAL PINS YES
+LAYOUT NETLIST EMPTY CELLS YES
+LAYOUT NETLIST NAMES NONE
+#LAYOUT NETLIST PRIMITIVE DEVICE SUBCKTS NO
+LAYOUT NETLIST PRIMITIVE DEVICE SUBCKTS YES
+# RB
+LAYOUT NETLIST SEPARATED PROPERTIES NO
+#LAYOUT NETLIST PIN LOCATIONS YES
+LAYOUT NETLIST PIN LOCATIONS YES 
+#RB
+LAYOUT NETLIST DEVICE TEMPLATES YES
+LAYOUT NETLIST HIERARCHY AGF
+LAYOUT NETLIST WRITE netlist_file
+# Outputs Calibre ideal layout name map for StarRC.
+# The EXPAND_CELLS keyword for LAYOUT NAMETABLE WRITE ensures that the 
+# lnn file and the netlist have the same hierarchy. The EXPAND_CELLS 
+# keyword requires Calibre version 2014.3 or later.
+LAYOUT NAMETABLE WRITE lnn_file EXPAND_CELLS
+# Outputs Calibre net cross-referencing table file; required to run XREF.
+# The LNXF keyword requires Calibre version 2014.3 or later.
+NET XREF WRITE nxf_file LNXF
+# Outputs Calibre instance cross-referencing table for StarRC
+# This is required to run XREF.
+INSTANCE XREF WRITE ixf_file
+# Outputs Calibre cell extents file for StarRC
+CELL EXTENTS WRITE extents.txt
+# Outputs Calibre top-level ports file for StarRC.
+PORT TABLE CELLS DB_CONNECTIVITY WRITE cells_ports_file
+# Outputs Calibre device table report file for StarRC.
+RESPONSE FILE devtab_file
+DEVICE TABLE
+RESPONSE DIRECT

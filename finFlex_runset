@@ -1,0 +1,13 @@
+*lvsRulesFile:   finFlex_LVS.rul
+*lvsLayoutPaths:   "AO_fin21.gds"
+*lvsLayoutPrimary:   AO21x2_fin21
+*lvsLayoutView: layout
+*lvsLayoutGetFromViewer: 1
+*lvsSourcePath:   finFlex.cdl
+*lvsSourcePrimary:   AO21x2_fin21
+*lvsReportFile:   LVS_report
+*lvsSVDBcci: 1
+*cmnSlaveHosts: {use {}} {hostName {}} {cpuCount {}} {a32a64 {}} {rsh {}} {maxMem {}} {workingDir {}} {layerDir {}} {mgcLibPath {}} {launchName {}}
+*cmnLSFSlaveTbl: {use 1} {totalCpus 1} {minCpus 1} {architecture {{}}} {minMemory {{}}} {resourceOptions {{}}} {submitOptions {{}}}
+*cmnGridSlaveTbl: {use 1} {totalCpus 1} {minCpus 1} {architecture {{}}} {minMemory {{}}} {resourceOptions {{}}} {submitOptions {{}}}
+*cmnFDILayoutView: layout
